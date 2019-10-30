@@ -28,10 +28,7 @@ Write a function named isCapitalized that takes in a string. This function shoul
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
-const isCapitalized = (str) => {
-  // let arr = [];
-  // str.match(new RegExp('[A-Z]'));
-};
+const isCapitalized = (str) => str.match(/[A-Z]\w+/g) || [];
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -62,7 +59,7 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-
+  return input.toString().match(/^[Oo]ct(ober)?$/);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,10 +73,9 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  let arr = [];
-  const result = str.match(new RegExp('([A-Za-z]*\s+)'));
-  console.log(JSON.stringify(result));
-  arr.push(str);
+
+  const regex = /\w+\s/gm;
+  return str.match(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,10 +90,7 @@ The function should return a string containing the consonants in their original 
 For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
-let hangman = (str) => {
-  // let newstr = str.replace(/a|e|i|o|u/, "_");
-  // return newstr;
-};
+let hangman = (str) => str.replace(/[aeiou]/gi, '_');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -117,13 +110,13 @@ const findShells = (str) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-04.solution.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
