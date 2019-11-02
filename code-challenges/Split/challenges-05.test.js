@@ -15,7 +15,10 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i <= str.length; i++) {
+    let word = str.slice(i, str.length);
+    result.push(word);
+  }
   return result;
 };
 
@@ -28,7 +31,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  return arr.split('');
 };
 
 
@@ -74,8 +77,12 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
+  const ingredients = recipe.ingredients;
   let result = [];
-  // Solution code here...
+  for (let i = 0; i < ingredients.length; i++) {
+    let food = ingredients[i].split(' ').slice(2).join(' ');
+    result.push(food);
+  }
   return result;
 };
 
@@ -88,8 +95,12 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
+  const ingredients = recipe.ingredients;
   let result = [];
-  // Solution code here...
+  for (let i = 0; i < ingredients.length; i++) {
+    let food = ingredients[i].split(' ').slice(2).join(' ');
+    result.push(food);
+  }
   return result;
 };
 
@@ -104,18 +115,22 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 ------------------------------------------------------------------------------------------------ */
 
 const stepActions = (recipe) => {
+  const steps = recipe.steps;
   let result = [];
-  // Solution code here...
+  for (let i = 0; i < steps.length; i++) {
+    let action = steps[i].split(' ');
+    result.push(action[0]);
+  }
   return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
-
+ 
 Write a function named removeEvenValues that, given an array of integers as input, deletes all even values from the array, leaving no 'gaps' behind.
-
+ 
 The array should be modified in-place.
-
+ 
 For example:
   const integers = [1, 2, 3, 4, 5, 6];
   removeEvenValues(integers);
@@ -123,18 +138,24 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for (let i = 0; i < arr.length; ++i) {
+    let even = arr[i] % 2 === 0;
+    if (even) {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
-
+ 
 Write a function named removeLastCharacters that takes in a string and a number. The numberOfCharacters argument determines how many characters will be removed from the end of the string. Return the resulting string.
-
+ 
 If the numberOfCharacters argument is greater than the length of the input string, the function should return an empty string.
-
+ 
 If the numberOfCharacters argument input is a negative number, the function should return the input string without any changes.
-
+ 
 For example:
 removeLastCharacters('Gregor', 2) returns 'Greg'
 removeLastCharacters('Gregor', -2) returns 'Gregor'
@@ -142,13 +163,21 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  let newstr;
+  if (numberOfCharacters >= str.length) {
+    newstr = '';
+  } else if (numberOfCharacters < 0) {
+    newstr = str;
+  } else {
+    newstr = str.slice(0, str.length - numberOfCharacters);
+  }
+  return newstr;
 };
 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
-
+ 
 Write a function named totalSumCSV that, given a string of comma-separated values (CSV) as input. (e.g. "1,2,3"), returns the total sum of the numeric values (e.g. 6).
 ------------------------------------------------------------------------------------------------ */
 
@@ -161,9 +190,9 @@ const totalSumCSV = (str) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
-
+ 
 Write a function named removeVowels that takes in a string and returns a new string where all the vowels of the original string have been removed.
-
+ 
 For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
@@ -173,11 +202,11 @@ const removeVowels = (str) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
-
+ 
 Write a function named extractVowels that takes in a string and returns an array where the first element is the original string with all the vowels removed, and the second element is a string of all the vowels that were removed, in alphabetical order.
-
+ 
 For example, extractVowels('gregor') returns ['grgr', 'eo'].
-
+ 
 Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioou']
 ------------------------------------------------------------------------------------------------ */
 
@@ -187,13 +216,13 @@ const extractVowels = (str) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-05.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
