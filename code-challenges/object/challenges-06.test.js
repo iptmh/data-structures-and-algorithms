@@ -71,7 +71,7 @@ let characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  for (let i = 0; i <= arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     houses.push(arr[i].house);
   }
   return houses;
@@ -90,8 +90,11 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
+  if (Object.values(character.children).length > 0) {
+    return true;
+  } else {
+    return false
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,7 +116,7 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+  return Object.values(characters.name).length + Object.values(characters.spouse).length + Object.values(characters.children).length
 };
 
 /* ------------------------------------------------------------------------------------------------
