@@ -8,11 +8,14 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => {
-    arr.reduce((accumulator, currentValue, idx) =>
-        acc.idx + 1,
-        0)
-};
+const countNumberOfElements = (arr) => arr.reduce((accumulator) => accumulator + 1, 0);
+
+// const countNumberOfElements = (arr) => {
+//     return arr.reduce(
+//         (accumulator) => accumulator + 1,
+//         0
+//     );
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -72,10 +75,11 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-    let result = arr.reduce((accumulator, person, idx) => {
-        accumulator[person.name];
+    let result = arr.reduce((accumulator, person) => {
+        accumulator.push(person.name);
         return accumulator;
-    });
+    }, []);
+    return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,8 +91,9 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-    let reversed = str.reduce((newString, currentLetter) => {
-        return currentLetter + newString;
+    let arr = str.split('');
+    let reversed = arr.reduce((accumulator, currentLetter) => {
+        return currentLetter + accumulator;
     }, '');
     return reversed;
 };
@@ -143,7 +148,12 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-    return arr.reduce((n, person) => n + person.children.length);
+    return arr.reduce((accumulator, person) => {
+        if (person.children !== undefined) {
+            return person.children.length + accumulator;
+        }
+        return accumulator;
+    }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -155,7 +165,12 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-    return arr.reduce((a, b) => a + b / arr.length);
+    return arr.reduce((accumulator, value, idx) => {
+        if (idx === arr.length - 1) {
+            return (accumulator + value) / arr.length
+        }
+        return accumulator + value;
+    }, 0)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -176,7 +191,12 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-    // return arr.reduce(isPrime(arr)accumulator, value))
+    return arr.reduce((accumulator, value) => {
+        if (isPrime(value) !== false) {
+            return accumulator + 1;
+        }
+        return accumulator;
+    }, 0)
 };
 
 /* ------------------------------------------------------------------------------------------------
