@@ -90,11 +90,22 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  if (Object.values(character.children).length > 0) {
-    return true;
-  } else {
-    return false
-  }
+  // if (Object.values(character.children).length > 0) {
+  //   return true;
+  // } else {
+  //   return false
+  // }
+  let children = 0;
+
+  arr.forEach(person => {
+    if (person.name === character) {
+      Object.keys(person).forEach((key, idx) => {
+        if (key === 'children') children = Object.values(person)[idx].length;
+      });
+    }
+  });
+
+  return children ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -107,6 +118,17 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  let children = 0;
+
+  Object.entries(arr).forEach(item => {
+    item.forEach(person => {
+      if (person.name === character) {
+        children = person.children.length > 0 ? true : false;
+      }
+    });
+  });
+
+  return children;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,7 +138,15 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  return Object.values(characters.name).length + Object.values(characters.spouse).length + Object.values(characters.children).length
+  // return Object.values(characters.name).length + Object.values(characters.spouse).length + Object.values(characters.children).length
+
+  let count = 0;
+  Object.values(arr).forEach(character => {
+    count++;
+    if (character.spouse) count++;
+    count += character.children.length;
+  });
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
