@@ -11,6 +11,8 @@ Time: O(n)
 Space: O(1)
 
 ## Solution 
-![Reverse Array Whiteboard](https://drive.google.com/open?id=16xEIkwo4v50--TtAk3kGn8g7ttE7x02v)
+![reverse array](https://user-images.githubusercontent.com/54918779/76708807-f5ac1d00-66b6-11ea-95c6-88a79d3bf480.png)
+
+
 
 
