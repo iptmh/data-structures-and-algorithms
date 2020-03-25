@@ -16,4 +16,4 @@ Time: O(log n)
 Space: O(1)
 
 ## Solution 
-
+![binary search](https://user-images.githubusercontent.com/54918779/77487956-18de7700-6df1-11ea-8991-b466a0d37ee0.png)
