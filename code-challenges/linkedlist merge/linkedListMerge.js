@@ -15,11 +15,11 @@ class LinkedList {
 
   mergeLists = (list1, list2) => {
 
-    if (list1 == null) return list2;
-    if (list2 == null) return list1;
-
     let cur1 = list1.head;
     let cur2 = list2.head;
+
+    if (cur1 == null) return list2;
+    if (cur2 == null) return list1;
 
     while (cur1 != null && cur2 != null) {
       let temp1 = cur1.next;
