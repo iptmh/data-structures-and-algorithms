@@ -15,4 +15,4 @@ Time: O(N)
 Space: O(1)
 
 ## Solution 
-![linkedlist insertion](https://user-images.githubusercontent.com/54918779/78412266-95c6d900-75c7-11ea-90ac-a09d7648a381.png)
+![challenge08](https://user-images.githubusercontent.com/54918779/78967718-1c902000-7ab8-11ea-892e-8a51037be39c.png)
