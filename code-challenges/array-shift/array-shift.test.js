@@ -7,3 +7,14 @@ describe('shiftArray', () => {
     expect(insertShiftArray(arr, value)).toStrictEqual([2, 4, 5, 6, 8]);
   });
 });
+
+// const badInputA = null
+
+
+describe('shiftArray', () => {
+  it('cannot add value to the array', () => {
+    let arr = [2, 4, 6, 8];
+    let value = "apple";
+    expect(insertShiftArray(arr, value)).toBeFalsy();
+  });
+});

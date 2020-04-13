@@ -1,51 +1,36 @@
 'use strict'
 
-class Node {
-  constructor(val) {
-    this.val = val;
-    this.next = null;
-  }
-}
+const LinkedList = require('./linked.js');
 
-class LinkedList {
-  constructor() {
-    // default linked list is empty
-    this.head = null;
-  }
+const mergedList = (list1, list2) => {
 
-  mergeLists = (list1, list2) => {
+  let mergedList = new LinkedList();
 
-    let cur1 = list1.head;
-    let cur2 = list2.head;
+  let cur1 = list1.head;
+  let cur2 = list2.head;
 
-    if (cur1 == null) return list2;
-    if (cur2 == null) return list1;
-
-    while (cur1 != null && cur2 != null) {
-      let temp1 = cur1.next;
-      cur1.next = cur2;
-      cur2 = temp1;
+  // while either list1 or list2 has a node
+  while (cur1 || cur2) {
+    // check if cur1 is a node
+    // append to list
+    // increment cur1 to next
+    if (cur1) {
+      mergedList.append(cur1.val);
       cur1 = cur1.next;
+      console.log(cur1)
     }
 
+    // check if cur2 is a node
+    // append to list
+    // increment cur2 to next
     if (cur2) {
-      cur1.next = cur2;
+      mergedList.append(cur2.val);
+      cur2 = cur2.next;
     }
-
-    return list1;
-  };
-
-  //adds a new node with the given value to the end of the list
-  append(val) {
-    let newNode = new Node(val);
-    let current = this.head;
-    // Find the last non-null node
-    while (current.next != null) {
-      current = current.next;
-    }
-    // Link new node to last non-null node
-    current.next = newNode;
   }
-}
+  console.log(mergedList)
+  return mergedList;
+};
 
-module.exports = LinkedList;
+module.exports = mergedList;
+

@@ -31,7 +31,9 @@ describe('passes all lab tests', () => {
     let linkList = new LinkedList();
 
     linkList.insert('F');
-    expect(linkedList.kthFromEnd(1)).toBe('F');
+    // let str = linkList.toString();
+
+    expect(str.kthFromEnd(1)).toBe('F');
 
   });
 });
