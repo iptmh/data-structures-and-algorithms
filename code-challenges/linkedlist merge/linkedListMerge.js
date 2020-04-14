@@ -1,7 +1,5 @@
 'use strict'
 
-const LinkedList = require('./linked.js');
-
 const mergedList = (list1, list2) => {
 
   let cur1 = list1.head;
