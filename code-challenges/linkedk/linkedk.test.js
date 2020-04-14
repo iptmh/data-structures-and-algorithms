@@ -19,19 +19,20 @@ describe('passes all lab tests', () => {
     linkList.insert('C');
     linkList.insert('B');
     linkList.insert('A');
-    // let str = linkList.toString();
 
-    expect(linkedList.kthFromEnd(2)).toBe('D');
-    expect(linkedList.kthFromEnd(-1)).toBe('k is not a positive integer');
-    expect(linkedList.kthFromEnd(10)).toBe('k is greater than the length of the linked list');
-    expect(linkedList.kthFromEnd(6)).toBe('k and the length of the list are the same');
+    expect(linkList.kthFromEnd(2)).toBe('C');
+    expect(() => linkList.kthFromEnd(-1)).toThrowError('k is not a positive integer');
+    expect(() => linkList.kthFromEnd(10)).toThrowError('k is greater than the length of the linked list');
+    jest.spyOn(global.console, 'log');
+    expect(linkList.kthFromEnd(6)).toBe('A');
+    expect(console.log).toHaveBeenCalled();
   });
 
   it('linked list is of a size 1', () => {
     let linkList = new LinkedList();
 
     linkList.insert('F');
-    expect(linkedList.kthFromEnd(1)).toBe('F');
+    expect(linkList.kthFromEnd(1)).toBe('F');
 
   });
 });

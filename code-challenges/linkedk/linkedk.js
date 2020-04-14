@@ -17,25 +17,24 @@ class LinkedList {
 
   kthFromEnd(k) {
     if (k < 0) {
-      console.log('k is not a positive integer');
-      return;
+      throw 'k is not a positive integer';
     }
 
     let p1 = this.head;
     let p2 = this.head;
 
-    for (let i = 0; i < k - 1; i++) {
+    for (let i = 0; i < k; i++) {
       if (!p2) {
-        console.log('k is greater than the length of the linked list');
-        return;
+        throw 'k is greater than the length of the linked list';
       }
+      console.log(p2)
       p2 = p2.next;
     }
 
-    //this will be true is k is the size of linked list
+    //this will be true if k is the size of linked list
     if (!p2) {
       console.log('k and the length of the list are the same');
-      return;
+      return this.head.val;
     }
 
     //'working case'
@@ -44,7 +43,7 @@ class LinkedList {
       p2 = p2.next;
       count++;
     }
-    while (p2.next != null) {
+    while (p2.next !== null) {
       p2 = p2.next;
       p1 = p1.next;
     }
@@ -80,7 +79,7 @@ class LinkedList {
     let currNode = this.head;
     let str = '';
 
-    while (currNode != null) {
+    while (currNode !== null) {
       str += `${currNode.val} -> `;
       currNode = currNode.next;
     }
