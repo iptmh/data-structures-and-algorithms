@@ -27,4 +27,5 @@ Queue
 enqueue(): O(1) dequeue(): O(1) peek(): O(1) isEmpty(): O(1) 
 
 ## Solution 
-![array-shift](https://user-images.githubusercontent.com/54918779/77214243-7f028b80-6acb-11ea-9cd3-d3cc2ea21171.png)
+![lab11 whiteborad](https://user-images.githubusercontent.com/54918779/79817681-e3b73d00-833a-11ea-801d-1fec55c06a6c.png)
+
