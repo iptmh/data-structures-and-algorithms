@@ -14,7 +14,10 @@ Define a method called peek that does not take an argument and returns the value
 Define a method called isEmpty that takes no argument, and returns a boolean indicating whether or not the queue is empty.
 
 ## Approach & Efficiency
-
+For push and enqueue, set up a new node, add it by setting it to be the new top or new front
+For pop and dequeue, set the second node from top/front to become the top/front
+For peek, just return the value of the top/front node
+for isEmpty, throw an error if there is no top node or front/rear node
 
 Big O:
 Stack
