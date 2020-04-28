@@ -7,7 +7,7 @@ let brackets = {
 };
 
 const multiBracketValidation = string => {
-  var stack = [];
+  let stack = [];
 
   for (var i = 0; i < string.length; i++) {
     if (brackets[stack[stack.length - 1]] === string[i]) {
@@ -17,6 +17,7 @@ const multiBracketValidation = string => {
     }
   }
 
+  //edge case, return something if there's no input
   return !stack.length;
 };
 
