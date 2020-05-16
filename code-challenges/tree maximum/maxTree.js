@@ -15,7 +15,7 @@ class BinaryTree {
 
   findMaximumValue(root = this.root) {
 
-    //if root is null (!root), return;
+    //if root is null (root === null), return;
     if (!root) {
       return null;
     }
