@@ -17,7 +17,8 @@ Time: O(n)
 
 
 ## Whiteboard
-https://docs.google.com/spreadsheets/d/195zHNbGA-V2VONVb2CAGit5XHbJw4PQvfQOox8pHP4U/edit?usp=sharing
+![repeated word](https://user-images.githubusercontent.com/54918779/85912765-fa1ec080-b7e3-11ea-83e7-5c167708d0ac.png)
+
 
 
 
