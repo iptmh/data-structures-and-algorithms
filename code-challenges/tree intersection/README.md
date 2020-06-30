@@ -15,7 +15,7 @@ Space: O(n)
 Time: O(n)
 
 ## Whiteboard
-![repeated word](https://user-images.githubusercontent.com/54918779/85912765-fa1ec080-b7e3-11ea-83e7-5c167708d0ac.png)
+![tree intersection](https://user-images.githubusercontent.com/54918779/86082259-2472b700-ba4c-11ea-828f-ff9467b7cbb8.png)
 
 
 
