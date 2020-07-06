@@ -13,13 +13,13 @@ describe('leftJoin', () => {
     expect(leftJoin(mapOne, mapTwo)).toEqual([])
   })
 
-  it('returns the left join values of one data point', () => {
+  it('returns the left join values of one key value pair', () => {
     mapOne.set('fruits', 'apple');
     mapTwo.set('fruits', 'orange');
     expect(leftJoin(mapOne, mapTwo)).toEqual([['fruits', 'apple', 'orange']])
   })
 
-  it('left joins with multiple data points', () => {
+  it('left joins with multiple key value pairs', () => {
     mapOne.set('fruits', 'apple');
     mapOne.set('meat', 'pork');
     mapTwo.set('fruits', 'orange');
