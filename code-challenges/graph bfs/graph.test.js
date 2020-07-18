@@ -128,7 +128,7 @@ describe('Graph', () => {
   })
 
   describe('breadthFirst()', () => {
-    it.only('returns an array of the nodes in order', () => {
+    it.skip('returns an array of the nodes in order', () => {
       graph.addNode('A');
       graph.addNode('B')
       graph.addNode('C');
