@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-class-members */
 const Queue = require('./queue')
 
 class Graph {
@@ -54,18 +55,37 @@ class Graph {
     return this.adjacencyList.size;
   }
 
+  // breadthFirst(node) {
+  //   const queue = new Queue();
+  //   const nodes = [];
+  //   const visited = new Set();
+  //   queue.enqueue(node);
+
+  //   while (queue.length > 0) {
+  //     let front = queue.dequeue();
+  //     nodes.push(front);
+  //     this.getNeighbors(node).map(child => {
+  //       if (!visited.has(child)) {
+  //         visited.add(child);
+  //         queue.enqueue(child);
+  //       }
+  //     })
+  //   }
+  //   return nodes;
+  // }
+
   breadthFirst(node) {
     const visited = new Set();
-    const queue = [node];
-    // const queue = new Queue();
-    // const nodes = [];
-    // queue.enqueue(node);
+    // const queue = [node];
+    const queue = new Queue();
+    const nodes = [];
+    queue.enqueue(node);
 
     while (queue.length > 0) {
-      let front = queue.shift();
+      let front = queue.dequeue();
       let destinations = this.adjacencyList.get(front);
       console.log(destinations);
-      // nodes.push(front);
+      nodes.push(front);
       for (const destination of destinations) {
         if (!visited.has(destination)) {
           visited.add(destination);

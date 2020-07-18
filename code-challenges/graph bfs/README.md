@@ -7,8 +7,9 @@ Extend your graph object with a breadth-first traversal method that accepts a st
 Breadth-first Search (BFS) starts by pushing all of the direct children to a queue (first-in, first-out). It then visits each item in queue and adds the next layer of children to the back of the queue. Use a Set to keep track of nodes that have already been visited.
 
 Big O:
-Time: O(N)
-Space: O(1)
+Time: O(n) 
+Space: O(n)
 
 ## Solution 
-![challenge12](https://user-images.githubusercontent.com/54918779/80273035-c4dee080-8683-11ea-84d6-307cb739c8e7.png)
+https://docs.google.com/spreadsheets/d/1NJYFZAbasM9zcKICmyv2xm7Ga7QilOC1BV7XY_SxCEE/edit?usp=sharing
+
